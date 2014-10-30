@@ -1,0 +1,31 @@
+{
+  "name": "geoip2",
+  "version": "1.0.0",
+  "description": "Node.js API for the MaxMind GeoIP2 databases",
+  "main": "index.js",
+  "dependencies": {
+    "maxmind-db-reader": "0.2.x",
+    "restify": "^2.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha $(find test -name '*.test.js')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:observing/geoip2.git"
+  },
+  "keywords": [
+    "GeoIP2",
+    "MaxMind",
+    "mmdb",
+    "api",
+    "Node.js"
+  ],
+  "author": "Martijn Swaagman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/observing/geoip2/issues"
+  },
+  "homepage": "https://github.com/observing/geoip2"
+}
