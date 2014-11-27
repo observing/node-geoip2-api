@@ -18,7 +18,7 @@ var GeoIp2API = module.exports = function GeoIp2API(server, options) {
   //
   // Open and read the provided database.
   //
-  this.db = geo.openSync(this.options.db || process.env.DB || './countries.mmdb');
+  this.db = geo.openSync(this.options.db || process.env.DB || './db.mmdb');
 
   //
   // Attach the server to the instance.
