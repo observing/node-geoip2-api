@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+'use strict';
+
+//
+// Instantiate the GeoIP2 API and start listening.
+//
+require('../').createServer();
