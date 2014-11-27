@@ -45,7 +45,7 @@ GeoIp2API.prototype.routing = function routing(routes) {
   routes.forEach(function addRoutes(router) {
     router(api);
   });
-}
+};
 
 /**
  * Create a new restify powered GeoIp2API server.
