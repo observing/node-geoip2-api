@@ -1,6 +1,7 @@
 'use strict';
 
-var restify = require('restify')
+var path = require('path')
+  , restify = require('restify')
   , geo = require('maxmind-db-reader');
 
 /**
@@ -18,7 +19,9 @@ var GeoIp2API = module.exports = function GeoIp2API(server, options) {
   //
   // Open and read the provided database.
   //
-  this.db = geo.openSync(this.options.db || process.env.DB || './db.mmdb');
+  this.db = geo.openSync(
+    this.options.db || process.env.DB || path.join(__dirname, 'db.mmdb')
+  );
 
   //
   // Attach the server to the instance.

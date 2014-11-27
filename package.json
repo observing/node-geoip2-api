@@ -1,6 +1,6 @@
 {
   "name": "node-geoip2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node.js Restify API for the MaxMind GeoIP2 databases",
   "main": "index.js",
   "dependencies": {
