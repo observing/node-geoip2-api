@@ -35,7 +35,6 @@ var GeoIp2API = module.exports = function GeoIp2API(server, options) {
  *
  * @param {Server} server HTTP server instance.
  * @param {Object} options Configuration.
- * @Constructor
  * @api public
  */
 GeoIp2API.prototype.routing = function routing(routes) {
