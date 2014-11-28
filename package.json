@@ -1,6 +1,6 @@
 {
-  "name": "node-geoip2",
-  "version": "1.0.3",
+  "name": "node-geoip2-api",
+  "version": "1.0.0",
   "description": "Node.js Restify API for the MaxMind GeoIP2 databases",
   "main": "index.js",
   "dependencies": {
@@ -10,11 +10,12 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "mocha $(find test -name '*.test.js')"
+    "test": "mocha $(find test -name '*.test.js')",
+    "start": "bin/server"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:observing/geoip2.git"
+    "url": "git@github.com:observing/node-geoip2-api.git"
   },
   "keywords": [
     "GeoIP2",
@@ -26,7 +27,7 @@
   "author": "Martijn Swaagman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/observing/geoip2/issues"
+    "url": "https://github.com/observing/node-geoip2-api/issues"
   },
-  "homepage": "https://github.com/observing/geoip2"
+  "homepage": "https://github.com/observing/node-geoip2-api"
 }
