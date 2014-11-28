@@ -2,6 +2,7 @@
 
 var path = require('path')
   , restify = require('restify')
+  , debug = require('diagnostics')('geoip2')
   , geo = require('maxmind-db-reader');
 
 /**
@@ -27,11 +28,6 @@ var GeoIp2API = module.exports = function GeoIp2API(server, options) {
   // Attach the server to the instance.
   //
   this.server = server;
-
-  //
-  // Initialize the server with the provided routes.
-  //
-  this.routing(this.options.routes || [require('./routes')]);
 };
 
 /**
@@ -51,6 +47,25 @@ GeoIp2API.prototype.routing = function routing(routes) {
 };
 
 /**
+ * Get data by IP.
+ *
+ * @param {String} ip IP to query.
+ * @param {Function} done Completion callback.
+ * @returns {GeoIp2API}
+ * @api public
+ */
+GeoIp2API.prototype.get = function get(ip, done) {
+  this.db.getGeoData(ip, function fetched(error, data) {
+    if (error) return done(error);
+
+    debug('Found geographical data for ip %s', ip);
+    return done(null, data);
+  });
+
+  return this;
+};
+
+/**
  * Create a new restify powered GeoIp2API server.
  *
  * @param {Number} port Port to listen on.
@@ -66,7 +81,7 @@ GeoIp2API.createServer = function createServer(port, options) {
 
   options.name = options.name || 'GeoIP2';
   options.version = options.version || require('./package').version;
-  options.port = options.port || process.env.PORT || 8080;
+  options.port = options.port || process.env.PORT || 8082;
 
   //
   // Create a Restify server and add default Restify middleware.
@@ -76,12 +91,17 @@ GeoIp2API.createServer = function createServer(port, options) {
   api.server.use(restify.queryParser());
 
   //
+  // Initialize the server with the provided routes.
+  //
+  api.routing(options.routes || [require('./server')]);
+
+  //
   // Listen by defauly unless specifically forbidden through options.
   //
   if (options.listen !== false) {
     api.server.listen(options.port, function listening(error) {
       if (error) return console.error(error);
-      console.log('%s listening at %s', api.server.name, api.server.url);
+      debug('%s listening at %s', api.server.name, api.server.url);
     });
   }
 
