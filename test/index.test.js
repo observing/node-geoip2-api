@@ -17,6 +17,8 @@ describe('API', function() {
     var child = exec('./bin/setup', function (error, stdout, stderr) {
       if (error) return done(error);
 
+      console.log(stdout);
+      console.error(stderr);
       console.log('    Finished downloading database to db.mmdb');
       done();
     });
