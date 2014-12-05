@@ -7,4 +7,4 @@ before_install:
   - "gunzip GeoLite2-City.mmdb.gz"
   - "mv GeoLite2-City.mmdb db.mmdb"
 before_script:
-  - "sleep 15
+  - "sleep 15"
