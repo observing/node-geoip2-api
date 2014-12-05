@@ -2,3 +2,10 @@ language: node_js
 node_js:
   - "0.10"
   - "0.11"
+before_install:
+  - "wget http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
+  - "gunzip GeoLite2-City.mmdb.gz"
+  - "mv GeoLite2-City.mmdb db.mmdb"
+before_script:
+  - "sleep 15"
+  - "ls -l db.mmdb"
