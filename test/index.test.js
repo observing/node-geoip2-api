@@ -13,11 +13,10 @@ var common = require('./common')
 describe('API', function() {
   before(function (done) {
     this.timeout(2E5);
-    console.log('    Fetching MaxMind\'s GeoLite2 database...');
     var child = exec('./bin/setup', function (error, stdout, stderr) {
       if (error) return done(error);
 
-      console.log('    Finished downloading database to db.mmdb');
+      console.log(stdout);
       done();
     });
   });
