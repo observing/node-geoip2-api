@@ -1,6 +1,6 @@
 {
   "name": "node-geoip2-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js Restify API for the MaxMind GeoIP2 databases",
   "main": "index.js",
   "dependencies": {
@@ -8,9 +8,18 @@
     "maxmind-db-reader": "0.2.x",
     "restify": "2.8.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "1.10.x",
+    "istanbul": "0.3.x",
+    "mocha": "2.0.x",
+    "mocha-lcov-reporter": "0.0.x",
+    "pre-commit": "0.0.x",
+    "sinon": "1.12.x",
+    "sinon-chai": "2.6.x"
+  },
   "scripts": {
-    "test": "mocha $(find test -name '*.test.js')",
+    "test": "NODE_ENV=test mocha $(find test -name '*.test.js')",
+    "coverage": "NODE_ENV=test istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true && rm -rf ./coverage",
     "start": "bin/server"
   },
   "repository": {

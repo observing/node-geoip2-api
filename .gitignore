@@ -29,3 +29,6 @@ node_modules
 
 # MaxMind database files
 *.mmdb
+
+# Test coverage
+.coveralls.yml
