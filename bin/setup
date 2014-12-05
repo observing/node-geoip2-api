@@ -4,7 +4,7 @@
 # Download the lastest free GeoLite2 City database.
 #
 if [ -f db.mmdb ]; then
-  echo -e "Database file \e[1mdb.mmdb\e[0m already exists, exiting" && exit 0
+  echo -e "Database file \e[1mdb.mmdb\e[0m exists, skipping download" && exit 0
 else
   echo "Fetching MaxMind's GeoLite2 database..."
   wget http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz
