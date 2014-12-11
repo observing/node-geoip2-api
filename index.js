@@ -17,6 +17,7 @@ var GeoIp2API = module.exports = function GeoIp2API(server, options) {
   if (!(this instanceof GeoIp2API)) return new GeoIp2API(options);
   this.options = options || {};
 
+
   //
   // Open and read the provided database.
   //
