@@ -2,8 +2,8 @@
 
 var path = require('path')
   , restify = require('restify')
-  , debug = require('diagnostics')('geoip2')
-  , geo = require('maxmind-db-reader');
+  , geo = require('maxmind-db-reader')
+  , debug = require('diagnostics')('geoip2-api');
 
 /**
  * GeoIp2API constructor.
