@@ -4,18 +4,18 @@
   "description": "Node.js Restify API for the MaxMind GeoIP2 databases",
   "main": "index.js",
   "dependencies": {
-    "diagnostics": "0.0.x",
+    "diagnostics": "~1.0.1",
     "maxmind-db-reader": "0.2.x",
-    "restify": "2.8.x"
+    "restify": "~4.3.0"
   },
   "devDependencies": {
-    "chai": "1.10.x",
-    "istanbul": "0.3.x",
-    "mocha": "2.0.x",
-    "mocha-lcov-reporter": "0.0.x",
-    "pre-commit": "0.0.x",
-    "sinon": "1.12.x",
-    "sinon-chai": "2.6.x"
+    "chai": "~3.5.0",
+    "istanbul": "~0.4.5",
+    "mocha": "~3.1.2",
+    "mocha-lcov-reporter": "~1.2.0",
+    "pre-commit": "~1.1.3",
+    "sinon": "~1.17.6",
+    "sinon-chai": "~2.8.0"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha $(find test -name '*.test.js')",
